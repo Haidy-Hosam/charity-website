@@ -1,0 +1,6 @@
+.container {
+  max-width: 1040px;     /* عرض المحتوى */
+  margin: 0 auto;        /* يخليه في النص */
+  padding: 0 30px;       /* المسافة يمين + شمال */
+  box-sizing: border-box;
+}

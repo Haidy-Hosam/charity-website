@@ -1,0 +1,33 @@
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;       /* يسمح بالنزول لسطر جديد */
+  gap: 30px;             /* المسافة بين الكروت */
+  padding: 20px 20px;
+  justify-content: center; /* توسيط المجموعة */
+  background-color: #ffffff;
+  direction: rtl;
+}
+
+/* العنصر اللي بيشيل الكارت ويحدد عرضه */
+.grid-item {
+  /* المعادلة دي بتقسم الشاشة على 3 وتخصم المسافات */
+  flex: 0 0 calc((100% - 60px) / 3); 
+  max-width: calc((100% - 60px) / 3);
+  box-sizing: border-box;
+}
+
+/* شاشات التابلت: كارتين بس */
+@media (max-width: 1000px) {
+  .grid-item {
+    flex: 0 0 calc((100% - 30px) / 2);
+    max-width: calc((100% - 30px) / 2);
+  }
+}
+
+/* الموبايل: كارت واحد */
+@media (max-width: 600px) {
+  .grid-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}

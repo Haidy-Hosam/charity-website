@@ -1,0 +1,36 @@
+.section-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;       /* عشان يملأ الكونتينر من الأول للآخر */
+  margin: 30px 0;
+  direction: rtl; 
+}
+
+/* التنسيق الأساسي للخط */
+.section-wrapper .line {
+  height: 2px;
+  background-color: #cfeff0;
+  opacity: 0.95;
+  /* مش هنحط width هنا، هنسيبه للـ React inline style */
+}
+
+.section-wrapper .title,
+.section-wrapper .more {
+  white-space: nowrap;
+  color: #5fb5be;
+  /* شلنا أي margins عشان الـ gap هو اللي بيقوم بالواجب */
+}
+
+.section-wrapper .title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.section-wrapper .more {
+  font-size: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}

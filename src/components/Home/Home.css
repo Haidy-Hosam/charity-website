@@ -1,0 +1,92 @@
+.frame-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  padding: 20px;
+}
+
+.frame2 {
+  width: 900px;  
+}
+.first.text.section , .second.text.section{
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 20px 80px;
+  padding: 0px;
+}
+/* ---------------------------- */
+.card {
+  width:320px;
+  background:#fff;
+  border-radius:12px;
+  padding:16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  overflow:hidden;
+  font-family:system-ui, Arial, sans-serif;
+}
+
+/* الصورة */
+.card__img {
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius:8px;
+  display:block;
+  margin-bottom:12px;
+}
+
+/* النصوص */
+.card__title {
+  font-size:1.05rem;
+  margin:0 0 6px 0;
+}
+.card__text {
+  color:#555;
+  font-size:0.95rem;
+  margin:0 0 12px 0;
+  line-height:1.4;
+}
+
+/* أزرار */
+.card__actions { display:flex; gap:8px; }
+.btn {
+  background:#2563eb;
+  color:#fff;
+  border:none;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+}
+.card {
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+/* ---------------------------- */
+.cards-row{
+  display:flex;
+  gap:16px;            /* المسافة بين الكروت */
+  flex-wrap:wrap;      /* لو ما فيش مساحة يكسروا لسطر تاني */
+  justify-content:center; /* يوسّط الصف لو لسه فيه مساحة */
+  padding:16px;
+}
+
+/* لو عايزة بالضبط 3 في سطر */
+.cards-row .card{
+  flex: 1 1 300px; max-width: 320px; /* 32px = gap * (cols - 1) */
+  box-sizing:border-box;
+  min-width:220px;     /* يمنع الكارد يصغر قوي */
+}
+
+/* responsive: لو شاشة أصغر خليهم يبقوا عمودين أو عمود واحد */
+@media (max-width:900px){
+  .cards-row .card{ flex: 0 0 calc((100% - 16px) / 2); } /* 2 in a row */
+}
+@media (max-width:520px){
+  .cards-row .card{ flex: 0 0 100%; } /* stacking single column */
+}

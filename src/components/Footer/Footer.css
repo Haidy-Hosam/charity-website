@@ -1,0 +1,133 @@
+/* Footer.css - copy into src/components/Footer/Footer.css */
+
+.site-footer{
+  background: #f6f7f6;
+  color: #111;
+  font-family: "Arial", sans-serif;
+  margin-top: 40px;
+}
+
+/* container */
+.footer-inner{
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;   /* ← تساوي المسافات */
+  align-items: center;              /* ← علشان يكونوا على نفس الخط */
+  padding: 40px 20px;
+  direction: rtl;
+}
+
+
+/* column common */
+.footer-col{
+  flex: 1;
+  min-width: 220px;
+}
+
+/* left column */
+.footer-left .donate{
+  background: #9fcf97;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 26px;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 18px;
+}
+
+.contact-box {
+  margin: 10px 0 18px;
+}
+
+.contact-label{
+  color: #7eaeb0;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.contact-number{
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* socials */
+.socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+.social {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* center column - logo */
+.footer-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-logo{
+  width: 160px;
+  height: auto;
+  display: block;
+}
+
+/* right column - quick links */
+.footer-right .quick-title{
+  color: #7eaeb0;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.quick-links{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.quick-links li{
+  margin-bottom: 10px;
+}
+.quick-links a{
+  color: #111;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* bottom bar */
+.footer-bottom{
+  background: #78c3c7;
+  padding: 14px 0;
+  margin-top: 18px;
+}
+.bottom-inner{
+  max-width: 1180px;
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .footer-inner{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-col { width: 100%; }
+  .footer-right .quick-title { text-align: center; margin-top: 10px; }
+  .footer-center { order: -1; } /* show logo at top on small screens */
+  .contact-number { font-size: 18px; }
+  .footer-logo { width: 180px; }
+}

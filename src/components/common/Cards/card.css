@@ -1,0 +1,130 @@
+.card-container {
+  width: 100%;
+  height: 350px; 
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  background: #fff;
+  display: flex;
+  flex-direction: column; /* يرص الصورة فوق والزرار تحت */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card-container:hover {
+  transform: translateY(-5px); /* رفعة بسيطة */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* 👇 الحاوية اللي ماسكة الصورة والبيانات المخفية 👇 */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  flex-grow: 1; /* 2. دي بتخلي الصورة تاخد كل المساحة المتاحة وتسيب مكان بس للزرار */
+  overflow: hidden; /* عشان الزووم */
+}
+
+.card_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card-container:hover .card_img {
+  transform: scale(1.1);
+}
+
+.badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #7FBCC6;
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  z-index: 10;
+}
+
+/* 👇 الـ Overlay يغطي الـ image-wrapper فقط 👇 */
+.card_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 10%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0) 100%);
+  opacity: 0; 
+  transition: opacity 0.3s ease;
+  z-index: 5;
+  
+  display: flex;
+  align-items: flex-end; /* المحتوى يكون تحت */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card-container:hover .card_overlay {
+  opacity: 1; /* يظهر عند الهوفر */
+}
+
+.overlay_content {
+  width: 100%;
+  text-align: right;
+  color: #fff;
+  transform: translateY(20px); /* حركة جمالية: النص بيطلع من تحت لفوق */
+  transition: transform 0.3s ease;
+}
+
+/* النص يطلع لفوق لما نعمل هوفر */
+.card-container:hover .overlay_content {
+  transform: translateY(0);
+}
+
+.overlay_title {
+  margin: 0 0 5px 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.overlay_text {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #ddd;
+  margin: 0;
+}
+
+
+.btn {
+  width: 100%;
+  height: 55px; 
+  border: none;
+  background-color: #7FBCC6;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative; /* عشان يبقى فوق أي حاجة */
+  z-index: 20; /* رقم عالي عشان نضمن إنه ينداس عليه */
+  transition: background 0.3s ease;
+  border-radius: 0 !important;
+}
+
+.btn:hover {
+  background-color: #6daeb8;
+}
+.card_date {
+  display: block;
+  font-size: 0.75rem; /* خط صغير */
+  color: #e0e0e0;     /* لون فضي فاتح */
+  margin-top: 10px;   /* مسافة تفصله عن العنوان */
+  font-family: sans-serif; 
+  opacity: 0.9;
+}
