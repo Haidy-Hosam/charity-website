@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/charity-website/static/css/main.6e8a62b9.css",
-    "main.js": "/charity-website/static/js/main.3aea07af.js",
+    "main.css": "/charity-website/static/css/main.3d1e995b.css",
+    "main.js": "/charity-website/static/js/main.a63395b0.js",
     "static/js/453.73c2dc74.chunk.js": "/charity-website/static/js/453.73c2dc74.chunk.js",
     "static/media/pexels-gustavo-fring-4894722.webp": "/charity-website/static/media/pexels-gustavo-fring-4894722.4fe01cf9efe4da896c6a.webp",
+    "static/media/rr.webp": "/charity-website/static/media/rr.e6201de90460bb86f675.webp",
     "static/media/Frame 2.png": "/charity-website/static/media/Frame 2.535fb81df76fdfbff8d8.png",
     "static/media/premium_photo-1661567408466-27899e8a4a2f.webp": "/charity-website/static/media/premium_photo-1661567408466-27899e8a4a2f.12dad62ae8fd9f2d78ae.webp",
     "static/media/Group 40.png": "/charity-website/static/media/Group 40.c7ea8355112a69de34d6.png",
@@ -17,6 +18,7 @@
     "static/media/male1.webp": "/charity-website/static/media/male1.984618b4c433131c46f8.webp",
     "static/media/female.webp": "/charity-website/static/media/female.f867b5d0f0c2249bd65d.webp",
     "static/media/femal2.webp": "/charity-website/static/media/femal2.29a29eb57ed6d740a257.webp",
+    "static/media/free-video-2247164.webp": "/charity-website/static/media/free-video-2247164.eb932ea29fc479dd0216.webp",
     "static/media/downloasd.webp": "/charity-website/static/media/downloasd.5ec1db940df61f485f08.webp",
     "static/media/Trial-Logo-3.webp": "/charity-website/static/media/Trial-Logo-3.5ac8dd806a5a670b6b0a.webp",
     "static/media/download.webp": "/charity-website/static/media/download.28d5dd8c2c7648addb4a.webp",
@@ -26,12 +28,12 @@
     "static/media/images.webp": "/charity-website/static/media/images.84e267d8fe51d1e6be54.webp",
     "static/media/download (3).webp": "/charity-website/static/media/download (3).4ed65e4d4d4e03a15b4a.webp",
     "index.html": "/charity-website/index.html",
-    "main.6e8a62b9.css.map": "/charity-website/static/css/main.6e8a62b9.css.map",
-    "main.3aea07af.js.map": "/charity-website/static/js/main.3aea07af.js.map",
+    "main.3d1e995b.css.map": "/charity-website/static/css/main.3d1e995b.css.map",
+    "main.a63395b0.js.map": "/charity-website/static/js/main.a63395b0.js.map",
     "453.73c2dc74.chunk.js.map": "/charity-website/static/js/453.73c2dc74.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6e8a62b9.css",
-    "static/js/main.3aea07af.js"
+    "static/css/main.3d1e995b.css",
+    "static/js/main.a63395b0.js"
   ]
 }
