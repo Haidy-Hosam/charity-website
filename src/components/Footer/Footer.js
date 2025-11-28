@@ -2,6 +2,7 @@ import React from "react";
 import "./Footer.css";
 import Group_40 from "../../assets/Group 40.png";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -10,21 +11,28 @@ export default function Footer() {
         <div className="footer-col footer-right">
           <div className="quick-title">روابط الانتقال السريع</div>
           <ul className="quick-links">
-            <li>
-              <a href="/">الصفحة الرئيسية</a>
-            </li>
-            <li>
-              <a href="/projects">المشاريع</a>
-            </li>
-            <li>
-              <a href="/about">عن الجمعية</a>
-            </li>
-            <li>
-              <a href="/store">المتجر الخيري</a>
-            </li>
-            <li>
-              <a href="/articles">الأخبار و المقالات</a>
-            </li>
+            <Link to="/callus">
+              <li>اتصل بنا</li>
+            </Link>
+
+            <Link to="/">
+              <li>
+                <a href="/">الصفحة الرئيسية</a>
+              </li>
+            </Link>
+            <Link to="/campaigns">
+              <li>المشاريع</li>
+            </Link>
+            <Link to="/aboutcharity">
+              <li>عن الجمعية</li>
+            </Link>
+
+            <Link to="/store">
+              <li>المتجر الخيري</li>
+            </Link>
+            <Link to="/newsandarticles">
+              <li>الأخبار والمقالات</li>
+            </Link>
           </ul>
         </div>
 
