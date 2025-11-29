@@ -1,0 +1,30 @@
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.lineee {
+  height: 3px;
+  display: block;
+}
+
+/* الخط القصير */
+.short-line {
+  flex: 0 0 auto;
+}
+
+/* الخط الطويل */
+.long-line {
+  flex: 1;
+}
+
+/* عنوان النص */
+.title-text {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+}

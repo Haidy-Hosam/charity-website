@@ -1,0 +1,21 @@
+.center-title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* يخلي العنوان في النص */
+  gap: 12px;
+  margin: 30px 0;
+}
+
+.center-line {
+  display: block;
+  flex: 1;               /* علشان الخطين يكونوا متساويين */
+  opacity: 0.7;          /* زي الصورة */
+}
+
+.center-title-text {
+  margin: 0;
+  white-space: nowrap;
+  font-weight: 600;
+  letter-spacing: 1px;
+}

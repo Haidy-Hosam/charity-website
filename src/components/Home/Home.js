@@ -1,6 +1,6 @@
 import React from "react";
 import frame2 from "../../assets/Frame 2.png";
-import SectionTitle from "../../components/common/Section_Line.js";
+import SectionTitle from "../common/LR_Section_line1/Section_Line.js";
 import "./Home.css";
 import CardGrid from "../../components/common/Cards/cardGrid.js";
 import CardStore from "../StoreCards/card.js"; // بتاع المتجر
