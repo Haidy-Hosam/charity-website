@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer className="site-footer">
-      <div className="footer-inner">
+      <div className="footer-inner flex flex-col md:flex-row gap-4 md:gap-0">
         <div className="footer-col footer-right">
           <div className="quick-title">روابط الانتقال السريع</div>
           <ul className="quick-links">
@@ -36,7 +36,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="footer-col footer-center">
+        <div className="footer-col footer-center order-first md:order-none">
           <img src={Group_40} alt="vision logo" className="footer-logo" />
         </div>
 

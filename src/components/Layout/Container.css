@@ -1,6 +1,12 @@
 .container {
   max-width: 1040px;     /* عرض المحتوى */
   margin: 0 auto;        /* يخليه في النص */
-  padding: 0 30px;       /* المسافة يمين + شمال */
   box-sizing: border-box;
+}
+
+/* Responsive padding handled by Tailwind classes in JSX */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 30px;       /* المسافة يمين + شمال على الديسكتوب */
+  }
 }
