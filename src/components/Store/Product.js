@@ -3,11 +3,11 @@ import { useHistory } from "react-router-dom";import { products } from "./produc
 import PurchaseProduct from "./PurchaseProduct"; 
 
 const ProductCard = ({ product, onBuyClick }) => {
-  const navigate = useHistory(); 
+const history = useHistory(); 
 
   // دي لما ادوس علي الكارد نفسه
   const handleCardClick = () => {
-    navigate(`/product/${product.id}`);
+  history.push(`/product/${product.id}`);
   };
 
   // دي لما ادوس علي اشتري الان
