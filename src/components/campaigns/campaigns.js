@@ -4,6 +4,8 @@ import CardGrid from "../common/Cards/cardGrid";
 import Card from "../common/Cards/card";
 import image2 from "../../assets/free-video-2247164.webp";
 import image3 from "../../assets/rr.webp";
+import CenterTitle from './../common/Center_Section_Line3/Center_Section_Line3';
+
 
 function Campaigns() {
   const NewCrds = [
@@ -29,14 +31,7 @@ function Campaigns() {
 
   return (
     <>
-      <div className="line_style">
-        <span className="line" style={{ flex: 1 }} aria-hidden="true"></span>
-
-        <h2 className="title"> الحملات </h2>
-
-        <span className="line" style={{ flex: 1 }} aria-hidden="true"></span>
-      </div>
-
+<CenterTitle text = 'الحملات'/>
       <div className="first text section">
         <p>
           في هذا القسم تجد جميع مبادرات وجهود جمعية سعادة طفل - إرث محمد، سواء

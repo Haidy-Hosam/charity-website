@@ -8,13 +8,12 @@ import AboutCharity from './components/AboutCharity/AboutCharity.js';
 import Store from './components/Store/Store.js';
 import CallUs from './components/CallUs/CallUs.js';
 import News_and_Acrticles from './components/News_and_Acrticles/News_and_Acrticles';
-
-
+import CardDetails from './components/News_and_Acrticles/CardDetails/CardDetails.js'
+import productDetails from './components/Store/productDetails.js'
 import {
   HashRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 function App() {
@@ -31,6 +30,8 @@ function App() {
           <Route path = "/store" exact component = {Store}/>
           <Route path = "/newsandarticles" exact component = {News_and_Acrticles}/>
           <Route path = "/callus" exact component = {CallUs}/>
+          <Route path = "/newsandarticles/campaignDetails/:id" exact component = {CardDetails}/>
+          <Route path = "/product/:id" exact component = {productDetails}/>
         </Switch>
         </div>
 

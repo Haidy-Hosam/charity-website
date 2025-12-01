@@ -1,0 +1,123 @@
+.news-hero {
+  width: 100%;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 240px; 
+    margin-top: 20px;
+}
+
+/* الصورة */
+.news-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* الـ overlay الغامق */
+.news-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.75)
+  );
+  z-index: 1;
+}
+
+/* الكلام فوق الصورة */
+.news-text {
+  position: absolute;
+  right: 20px;
+  bottom: 18px;
+  color: #fff;
+  z-index: 2;
+  text-align: right;
+}
+
+.news-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.news-date {
+  margin: 4px 0 0;
+  font-size: 12px;
+  opacity: 0.85;
+}
+.headtext{
+  font-size: 25px;
+  text-align: right;
+  margin: 30px 0px;
+}
+
+.event-body , .event-meta{
+  text-align: right;
+}
+
+.search-filter-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  direction: rtl;
+}
+
+/* زرار الفلترة */
+.filter-btn {
+  padding: 12px 20px;
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  color: #666;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.filter-btn i {
+  font-size: 18px;
+}
+
+.filter-btn:hover {
+  background: #eee;
+}
+
+/* بوكس البحث */
+.search-box {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  direction: rtl;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #666;
+}
+
+.search-box i {
+  font-size: 18px;
+  color: #999;
+}
+.first.text.section{
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 20px 80px;
+  padding: 0px;
+}

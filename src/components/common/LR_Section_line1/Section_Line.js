@@ -1,4 +1,5 @@
 import "./Section_Line.css";
+import { Link } from "react-router-dom";
 
 export default function SectionTitle({
   title = "الحملات الجارية",
@@ -22,9 +23,9 @@ export default function SectionTitle({
           {linkText}
         </button>
       ) : (
-        <a className="more" href={linkHref}>
+        <Link className="more" to={linkHref}>
           {linkText}
-        </a>
+        </Link>
       )}
 
       {/* الخط الشمال: flex: 1 */}

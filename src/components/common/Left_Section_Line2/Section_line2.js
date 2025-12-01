@@ -1,6 +1,6 @@
 import "./Section_line2.css"
 
-export default function SectionLine({ text, color = "#6aaeb6", lineColor = "#b9e0e6", shortLine = "70px" }) {
+export default function SectionLine({ text, color = "#6aaeb6", lineColor = "#b9e0e6", shortLine = "70px"}) {
   return (
     <div className="section-title" dir="rtl">
       {/* الخط القصير على اليمين */}

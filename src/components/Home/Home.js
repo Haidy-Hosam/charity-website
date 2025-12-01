@@ -3,7 +3,7 @@ import frame2 from "../../assets/Frame 2.png";
 import SectionTitle from "../common/LR_Section_line1/Section_Line.js";
 import "./Home.css";
 import CardGrid from "../../components/common/Cards/cardGrid.js";
-import CardStore from "../StoreCards/card.js"; // بتاع المتجر
+import ProductGrid from "../Store/Product.js"; // بتاع المتجر المظبوط
 import Card from "../common/Cards/card.js";
 import image4 from "../../assets/kids-playing-football-29318311.webp";
 import image5 from "../../assets/pexels-gustavo-fring-4894722.webp";
@@ -47,7 +47,7 @@ export default function Home() {
         <img className="frame2" src={frame2} alt="Frame 2" />
       </div>
       <div>
-        <SectionTitle title="الحملات الجارية" linkText="عرض المزيد" />
+        <SectionTitle title="الحملات الجارية" linkText="عرض المزيد"  linkHref = '/campaigns' />
       </div>
       <div className="first text section">
         <p>
@@ -58,40 +58,9 @@ export default function Home() {
         </p>
       </div>
 
-      {/* <div class="cardH">
-      <article class="card">
-      <img src={logo} alt="short description" class="card__img"/>
-      <h3 class="card__title">Card title</h3>
-      <p class="card__text">Short description about this card.</p>
-      <div class="card__actions">
-      <button class="btn">Action</button>
-      </div>
-      </article>
-      <article class="card">
-      <img src={logo} alt="short description" class="card__img"/>
-      <h3 class="card__title">Card title</h3>
-      <p class="card__text">Short description about this card.</p>
-      <div class="card__actions">
-      <button class="btn">Action</button>
-      </div>
-      </article>
-      <article class="card">
-      <img src={logo} alt="short description" class="card__img"/>
-      <h3 class="card__title">Card title</h3>
-      <p class="card__text">Short description about this card.</p>
-      <div class="card__actions">
-      <button class="btn">Action</button>
-      </div>
-      </article>
-      </div> */}
-
-      {/* <div class="card">
-    <Cardgrid />
-    </div> */}
-
       <CardGrid />
       <div>
-        <SectionTitle title="الحملات البارزة" linkText="عرض المزيد" />
+        <SectionTitle title="الحملات البارزة" linkText="عرض المزيد"/>
       </div>
 
       <Card
@@ -108,7 +77,7 @@ export default function Home() {
       />
 
       <div>
-        <SectionTitle title="المقالات" linkText="عرض المزيد" />
+        <SectionTitle title="المقالات" linkText="عرض المزيد"  linkHref = '/newsandarticles'/>
       </div>
 
       <div className="second text section">
@@ -129,7 +98,7 @@ export default function Home() {
       />
 
       <div>
-        <SectionTitle title="المتجر الخيري" linkText="عرض المزيد" />
+        <SectionTitle title="المتجر الخيري" linkText="عرض المزيد"  linkHref = '/store'/>
       </div>
 
       <div className="Third text section">
@@ -141,7 +110,7 @@ export default function Home() {
       </div>
 
       <div></div>
-      <CardStore />
+<ProductGrid limit={3} />
 
       <div className="line_style">
         <span className="line" style={{ flex: 1 }} aria-hidden="true"></span>

@@ -1,4 +1,3 @@
-import React from "react";
 import "./cardgrid.css";
 import image1 from "../../../assets/pexels-photo-7386009.webp";
 import image2 from "../../../assets/pexels-photo-9070698.webp";
