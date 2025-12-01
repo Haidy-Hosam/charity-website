@@ -45,7 +45,6 @@
   align-items: center;
   justify-content: center;
 }
-
 .arrow {
   position: absolute;
   top: 50%;
@@ -63,6 +62,10 @@
   align-items: center;
   justify-content: center;
   transition: 0.2s;
+
+  /* 🔥 التعديلات هنا 🔥 */
+  padding-bottom: 5px; /* دي بتزق السهم لفوق .. ممكن تخليها 4px أو 6px لحد ما تظبط بعينك */
+  line-height: 0;      /* دي بتلغي ارتفاع السطر عشان التوسيط يبقى دقيق */
 }
 
 .arrow:hover {
@@ -78,7 +81,6 @@
 .left-arrow {
   left: -50px;
 }
-
 .Partners {
   width: 100%;
   display: flex;
@@ -95,10 +97,10 @@
 }
 /* الشمال */
 .left-arrow2 {
-  left: -50px;
+  left: -40px;
 }
 .right-arrow2 {
-  right: -60px;
+  right: -40px;
 }
 
 /* =============================================================================================================== */

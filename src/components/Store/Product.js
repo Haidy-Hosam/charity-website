@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";import { products } from "./productsData";
+import { useHistory } from "react-router-dom";
+import { products } from "./productsData";
 import PurchaseProduct from "./PurchaseProduct"; 
 
 const ProductCard = ({ product, onBuyClick }) => {
-  const navigate = useHistory(); 
-
+const history = useHistory();
   // دي لما ادوس علي الكارد نفسه
-  const handleCardClick = () => {
-    navigate(`/product/${product.id}`);
+const handleCardClick = () => {
+    history.push(`/product/${product.id}`);
   };
-
   // دي لما ادوس علي اشتري الان
   const handleBuyClick = (e) => {
     e.stopPropagation(); //  تمنع الكارد إنه يحس بالدوسة دي

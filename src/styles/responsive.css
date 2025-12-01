@@ -1,0 +1,609 @@
+/* src/styles/responsive.css — cleaned & mobile-first */
+
+/* ---------- Global defaults ---------- */
+:root{
+  --page-padding: 16px;
+  --max-width: 1200px;
+  --base-font: 16px;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden; /* prevent horizontal scroll globally */
+}
+
+/* layout base */
+.container{
+  width:100%;
+  max-width:var(--max-width);
+  padding-inline:var(--page-padding);
+  margin-inline:auto;
+}
+
+/* media defaults */
+img, picture, video { max-width:100%; height:auto; display:block; object-fit:cover; }
+button, a.button { min-height:44px; padding:10px 12px; border-radius:8px; }
+.break-word{ word-break:break-word; overflow-wrap:break-word; }
+
+/* breakpoints */
+@media (min-width:600px){ :root{ --page-padding:24px; } }
+@media (min-width:1024px){ :root{ --page-padding:32px; } }
+
+/* =========================
+   Header overrides (mobile-first)
+   ========================= */
+.header { width:100%; direction: rtl; }
+
+.top-bar, .nav-bar { position: relative; padding: 8px 12px; }
+.logo-contact {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding-inline:12px;
+}
+.logo-img{ width: 64px; max-width:40%; height:auto; object-fit:contain; }
+
+.contact{ display:flex; flex-direction:column; align-items:center; text-align:center; }
+.contact-label { font-size: 12px; }
+.contact-number { font-size: 17px; }
+
+.divider { display:none; } /* hide vertical divider on mobile */
+
+.nav-links { display:none !important; }   /* hide desktop nav on mobile */
+.hamburger-btn {
+  display:block !important;
+  position:absolute; right:12px; top:12px; z-index:50;
+}
+
+/* avoid duplicate donate button inside nav on mobile */
+.nav-bar .donate-btn,
+.nav-links .donate-btn { display:none !important; }
+
+/* primary donate button appearance */
+.mobile-donate,
+.header .donate-btn {
+  display:inline-block;
+  padding:10px 18px;
+  min-height:44px;
+  border-radius:22px;
+  font-size:15px;
+  margin:6px 0;
+}
+
+/* small spacing fixes between top-bar and nav-bar */
+.top-bar + .nav-bar { margin-top: 0; padding-top: 6px; }
+
+/* =========================
+   Cards / Testimonials / Opinions
+   Mobile stacking + hide arrows
+   ========================= */
+.cards-row { display:flex; gap:16px; flex-wrap:wrap; justify-content:center; padding:16px; }
+.cards-row .card { flex: 1 1 300px; max-width:320px; box-sizing:border-box; min-width:220px; transition: transform .18s ease; }
+
+.Opinions { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; padding:0; }
+.p1,.p2,.p3,.p4 {
+  background:#f2f4f3; border-radius:20px; padding:15px;
+  display:flex; flex-direction:column; align-items:center; gap:10px; box-sizing:border-box;
+}
+.female,.male,.par, .avatar { width:70px; height:70px; border-radius:50%; object-fit:cover; }
+
+.slick-arrow, .carousel-arrow, .slider-arrow,
+.arrow, .left-arrow, .right-arrow, .left-arrow2, .right-arrow2 { transition: opacity .2s; }
+
+/* mobile (single column) */
+@media (max-width:520px) {
+  .frame2, .frame-wrapper { width:100% !important; max-width:100% !important; padding-inline:8px !important; }
+
+  .cards-row .card {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    min-width: auto !important;
+    padding:14px !important;
+    border-radius:12px !important;
+    transform: none !important; /* disable hover lift */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  }
+
+  .card__img { height:140px !important; border-radius:8px; }
+  .card__title { font-size:1rem; }
+  .card__text { font-size:0.95rem; line-height:1.6; }
+
+  .Opinions { flex-direction:column !important; gap:12px !important; padding-inline:12px; }
+  .p1,.p2,.p3,.p4 { flex:0 0 100% !important; width:100% !important; padding:14px !important; border-radius:14px !important; text-align:right; }
+  .p1 img, .p2 img, .p3 img, .p4 img, .female, .male, .par, .avatar {
+    width:46px !important; height:46px !important; margin:0 auto !important; align-self:center !important;
+  }
+
+  /* hide side arrows on small screens */
+  .slick-arrow, .carousel-arrow, .slider-arrow,
+  .arrow, .left-arrow, .right-arrow, .left-arrow2, .right-arrow2 { display:none !important; pointer-events:none !important; }
+
+  /* reduce section spacing */
+  .section, .frame-wrapper { padding-top:8px; padding-bottom:8px; }
+  .first.text.section, .second.text.section, .Third.text.section, .Forth.text.section, .fifth.text.section, .T1 {
+    margin:12px 12px !important; font-size:16px !important; line-height:1.7 !important;
+  }
+
+  /* About hero */
+  .about-hero { min-height:auto !important; padding:18px 10px !important; background-position:center !important; }
+  .about-hero-inner { flex-direction:column !important; padding-inline:12px !important; }
+  .about-text { width:100% !important; background:rgba(0,0,0,0.45) !important; padding:14px !important; border-radius:8px !important; color:#fff !important; }
+
+  /* Goals -> column */
+  .Goals { flex-direction:column !important; gap:18px !important; padding-inline:12px; }
+  .GoalBoard, .num { width:100% !important; max-width:100% !important; }
+  .goal p { max-width:100% !important; }
+
+  /* Team cards */
+  .team-wrapper { flex-direction:column !important; gap:18px !important; align-items:center !important; margin-top:20px !important; }
+  .team-card {
+    width:100% !important; max-width:360px !important; padding:70px 18px 24px !important; border-radius:12px !important; position:relative !important; margin-inline:auto !important;
+  }
+  .team-image-wrapper {
+    position:absolute !important; top:-60px !important; left:50% !important; transform:translateX(-50%) !important;
+    width:110px !important; height:110px !important; border-width:5px !important;
+  }
+  .team-image { width:100% !important; height:100% !important; object-fit:cover !important; }
+
+  /* tighten lines & titles */
+  .line_style2 { padding-inline:12px !important; margin-top:18px !important; gap:8px; }
+  .line2.short { flex-basis:40px !important; }
+  .title { font-size:16px !important; padding:0 6px; white-space:nowrap; }
+
+  /* prevent unexpected overflow in cards */
+  .card, .team-card, .testimonial-card, .p1, .p2, .p3, .p4 { overflow-wrap:break-word; word-break:break-word; max-width:100% !important; }
+}
+
+/* tablet (two columns) */
+@media (min-width:521px) and (max-width:900px) {
+  .frame2 { width:100% !important; padding-inline:12px; }
+  .cards-row .card { flex: 0 0 calc((100% - 16px)/2); max-width: calc((100% - 16px)/2); }
+  .p1,.p2,.p3,.p4 { flex: 0 0 48% !important; width:48% !important; }
+  .team-wrapper { gap:20px; flex-wrap:wrap; justify-content:center; }
+  .team-card { width:310px; padding:90px 20px 24px; }
+  .team-image-wrapper { top:-70px; width:125px; height:125px; }
+  .arrow.left-arrow, .arrow.right-arrow { display:none; } /* optional */
+  .team-wrapper {
+    flex-direction: column !important; /* عشان يجوا تحت بعض */
+    gap: 100px !important; /* ✅ ده الحل: كبرنا المسافة لأكتر من 80px */
+    padding-top: 50px; /* مسافة فوق عشان صورة أول كارد متتقطعش */
+  }
+  
+  /* تعديل إضافي عشان شكل الكارد نفسه */
+  .team-card {
+    margin: 0 auto; /* عشان يتسنتر في النص */
+  }
+}
+
+/* desktop restore */
+/* ===== Put Donate button inline with nav links on desktop ===== */
+@media (min-width: 901px) {
+  /* إلغاء الوضع المطلق اللي عملناه قبل كده */
+  .donate-btn,
+  .header .donate-btn {
+    position: static !important;
+    transform: none !important;
+    left: auto !important;
+    top: auto !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    margin-inline-start: 18px !important; /* مسافة بين الروابط والزر */
+    margin-inline-end: 0 !important;
+    z-index: 20 !important;
+  }
+
+  /* لو الزر جوه nav-bar: نضمن أنه يظهر بجانب الروابط */
+  .nav-links {
+    display: flex !important;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* لو محتاجة الزر في بداية القايمة بدلاً من النهاية: استخدمي order */
+  /* .donate-btn { order: 0; } */
+  /* .nav-links li { order: 1; } */
+
+  /* ستايل بصري خفيف للزر على الديسكتوب */
+  .donate-btn {
+    background: #9acb94 !important;
+    color: #fff !important;
+    font-size: 16px !important;
+    padding: 10px 20px !important;
+    border-radius: 26px !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+
+  /* تأكد أن الهامبرجر مخفي */
+  .hamburger-btn { display: none !important; }
+}
+
+/* ===== Fix: show nav on desktop, hide only on small screens ===== */
+
+/* remove any global hiding of nav-links (ensure this comes AFTER old rule) */
+@media (min-width: 521px) {
+  .nav-links { display: flex !important; gap: 25px; align-items: center; list-style: none; padding: 0; margin: 0; }
+  .hamburger-btn { display: none !important; } /* hide hamburger on desktop */
+}
+
+/* hide nav-links on small screens only */
+@media (max-width: 520px) {
+  .nav-links { display: none !important; } /* mobile: hide horizontal links */
+  .hamburger-btn { display: block !important; } /* show hamburger on mobile */
+}
+
+/* ===== Fix: about-hero overflow & safe background handling ===== */
+.about-hero {
+  overflow: hidden;                 /* prevent children from creating horizontal scroll */
+  background-size: cover;
+  background-position: center right; /* keep original, but child will adapt */
+}
+
+/* ensure inner wrapper never exceeds viewport width */
+.about-hero-inner {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-inline: 16px;   /* safe padding */
+  box-sizing: border-box;
+}
+
+/* make about-text safe inside hero */
+.about-text {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  margin: 0;
+}
+
+/* remove any large fixed widths/margins that might cause overflow */
+.T1,
+.first.text.section,
+.second.text.section,
+.Third.text.section,
+.Forth.text.section,
+.fifth.text.section {
+  margin-left: 12px !important;
+  margin-right: 12px !important;
+}
+
+/* ensure global wrappers don't create horizontal scroll */
+.frame-wrapper, .frame2, .container {
+  box-sizing: border-box;
+  padding-inline: 12px;
+  max-width: 100%;
+}
+
+/* tiny helper to debug overflow (optional, remove after testing) */
+/* html { outline: none; } */
+/* .about-hero, .about-hero * { outline: 1px dashed rgba(0,0,0,0.04); } */
+/* ===== Desktop restore overrides (place LAST) ===== */
+/* Ensure these rules come after all mobile overrides so desktop is restored */
+
+@media (min-width: 901px) {
+
+  /* container/frame width restore */
+  .frame2, .frame-wrapper, .container {
+    max-width: 900px;
+    width: 100%;
+    padding-inline: 24px;
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+
+  /* Header: show nav links, hide hamburger on desktop */
+  .nav-links { display: flex !important; gap: 25px; align-items: center; list-style: none; padding: 0; margin: 0; }
+  .hamburger-btn { display: none !important; }
+
+  /* Cards: return to multi-column desktop layout */
+  .cards-row { display: flex !important; gap: 16px; flex-wrap: wrap; justify-content: center; padding: 24px; }
+  .cards-row .card {
+    flex: 1 1 300px !important;
+    max-width: 320px !important;
+    min-width: 220px !important;
+    padding: 16px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    transform: translateY(0) !important;
+  }
+
+  /* Opinions/testimonials: two columns */
+  .Opinions { display:flex !important; flex-wrap:wrap; gap:20px; justify-content:center; padding-inline: 0; }
+  .p1, .p2, .p3, .p4 {
+    flex: 0 0 48% !important;
+    width: 48% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    text-align: right !important;
+    padding: 18px !important;
+    border-radius: 12px !important;
+  }
+  .p1 img, .p2 img, .p3 img, .p4 img,
+  .female, .male, .par, .avatar {
+    width: 70px !important; height:70px !important; margin: 0 14px; align-self: center !important;
+  }
+
+  /* Show slider arrows on desktop */
+  .slick-arrow, .carousel-arrow, .slider-arrow,
+  .arrow, .left-arrow, .right-arrow, .left-arrow2, .right-arrow2 {
+    display: block !important;
+    pointer-events: auto !important;
+    opacity: 1 !important;
+  }
+
+  /* About hero: give it more horizontal room */
+  .about-hero { padding: 40px 24px; background-position: center right; overflow: visible; }
+  .about-hero-inner { flex-direction: row-reverse; gap: 24px; max-width: var(--max-width); }
+
+  /* Team cards: side-by-side */
+  .team-wrapper { display:flex !important; flex-direction: row !important; gap: 40px !important; justify-content: center !important; align-items: flex-start !important; }
+  .team-card { width: 310px !important; max-width: 310px !important; padding: 110px 25px 30px !important; border-radius: 16px !important; position: relative !important; }
+
+  /* Undo any forced full-width for cards that mobile rules added */
+  .cards-row .card, .p1, .p2, .p3, .p4 { max-width: none; }
+
+  /* Titles/lines restore */
+  .line_style, .line_style2 { margin: 30px 0; padding-inline: 24px; }
+  .title { font-size: 20px; }
+
+  /* make sure no global overflow rule hides desktop scrollbars if needed */
+  html, body { overflow-x: visible; }
+
+}
+/* ========== Center header on Desktop ========== */
+@media (min-width: 901px) {
+
+  /* رجّعي الـ top-bar للسنتر */
+  .top-bar {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 15px 0 !important; 
+  }
+
+  /* نخلي مجموعة اللوجو + الديفايدر + الكونتاكت تتسنتر جواها */
+  .logo-contact {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+  }
+  .logo-img {
+    width: 130px !important;       /* كان 90px → أكبر شوية */
+  }
+
+  /* رجوع الديفايدر */
+  .divider {
+    display: block !important;
+    width: 2px !important;
+    height: 45px !important;
+    background-color: #000 !important;
+    margin: 0 14px !important;
+        height: 60px !important;       /* كان 45px */
+    margin: 0 18px !important;     /* مسافة أكبر */
+  }
+  .contact-label {
+    font-size: 17px !important;
+  }
+
+  .contact-number {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+  }
+  /* يرجع الكونتاكت شكله الطبيعي */
+  .contact {
+    text-align: right !important;
+    align-items: flex-start !important;
+  }
+
+}
+/* ---------- about-text responsive fixes ---------- */
+
+/* Desktop default (keep original behaviour) */
+.about-text {
+  width: 45%;
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.9;
+  font-weight: 400;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  box-sizing: border-box;
+  margin: 0;            /* امنع margin افتراضي يزق العنصر */
+  max-width: 560px;     /* يمنع العنصر يبقى كبير جدًا على شاشات واسعة */
+}
+
+/* paragraphs inside */
+.about-text p { margin-bottom: 12px; }
+
+/* MOBILE: make about-text full-width but readable and centered */
+/* ========== Fix Goals / GoalBoard responsiveness ========== */
+/* Apply only on small screens (mobile) */
+@media (max-width: 800px) {
+
+  /* Make Goals stack vertically on mobile */
+  .Goals {
+    display: flex !important;
+    flex-direction: column !important;  /* stack: image then list (or list then image) */
+    align-items: center !important;
+    gap: 20px !important;
+    padding-inline: 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Make sure the big graphic doesn't force overflow */
+  .GoalBoard,
+  .Mint_Triangle {
+    width: 100% !important;
+    max-width: 420px !important;   /* limit max so it doesn't dominate the screen */
+    height: auto !important;
+    margin: 0 auto !important;
+    display: block !important;
+    box-sizing: border-box !important;
+  }
+
+  /* If GoalBoard contains an svg or image, make it scale nicely */
+  .GoalBoard img,
+  .GoalBoard svg {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Make the numbered goals appear below or above the image in a readable column */
+  .goals-list {
+    width: 100% !important;
+    max-width: 520px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+    padding: 0 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  .goal {
+    flex-direction: row !important;       /* number at left (or right in RTL adjust) */
+    align-items: flex-start !important;
+    gap: 12px !important;
+    text-align: right !important;        /* keep Arabic alignment */
+  }
+
+  /* style for the large number */
+  .num {
+    font-size: 30px !important;
+    min-width: 40px !important;
+    text-align: center !important;
+    color: #6cc0c9 !important;
+    margin-inline-start: 6px !important;
+  }
+
+  /* ensure goal description wraps nicely and doesn't exceed */
+  .goal p {
+    margin: 0 !important;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    max-width: 100% !important;
+    word-break: break-word !important;
+  }
+
+  /* tighten overall spacing so content fits on screen */
+  .title, .line_style2, .line_style {
+    padding-inline: 12px !important;
+    margin: 14px 0 !important;
+  }
+
+  /* remove any negative margins or very large paddings that push layout */
+  .frame2, .frame-wrapper {
+    padding-inline: 8px !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Restore desktop behaviour (optional safety) */
+/* =========================
+   Fix Mission/Message Box on Desktop
+   ========================= */
+
+@media (min-width: 901px) {
+  
+  /* استبدلي .your-mission-class بالاسم الحقيقي اللي هتلاقيه في الـ Inspect */
+  .your-mission-class {
+    width: 100% !important;        /* يجبره ياخد العرض كامل */
+    max-width: 100% !important;    /* يلغي أي حد أقصى للعرض */
+    flex: 0 0 100% !important;     /* لو هو جوه flexbox ياخد السطر كله */
+    display: block !important;     /* يضمن إنه يظهر كبلوك كامل */
+    margin-inline: 0 !important;   /* يظبط الهوامش الجانبية */
+    box-sizing: border-box !important;
+  }
+
+  /* لو النص جوه متزحزح، ممكن تحتاجي تظبطي الـ padding */
+  .your-mission-class p {
+     max-width: 100% !important;
+  }
+}
+/* كلاس خاص لصندوق الرسالة عشان ياخد العرض كامل */
+/* 1. الكونتينر الخارجي: يضمن العرض الكامل */
+.mission-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 20px; /* هوامش جانبية عشان ميبقاش لازق في الشاشة */
+  box-sizing: border-box;
+}
+
+/* 2. الصندوق الملون (كان اسمه Mint_Triangle) */
+.Mint_Triangle {
+  background-color: #7fbfc1;
+  
+  /* 1. العرض: ياخد العرض بالكامل عشان يطابق اللي فوقه */
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box; /* مهم عشان البادينج مايوسعش البوكس */
+  
+  /* 2. الشكل: حواف حادة تماماً */
+  border-radius: 0; 
+  border: none;
+
+  /* تنسيقات المسافات */
+  padding: 40px;         /* مساحة داخلية للكلام */
+  margin-top: 30px;      /* مسافة بينه وبين الرؤية */
+  height: auto;          /* الطول مرن حسب الكلام */
+}
+
+/* 3. تنسيق النص */
+.T3 {
+  direction: rtl;
+  text-align: justify;
+  color: #ffffff;        /* لون أبيض عشان يبان على الخلفية */
+  font-size: 16px;
+  line-height: 1.8;      /* تباعد أسطر مريح للقراءة */
+  margin-top: 15px;
+}
+
+/* =========================
+   Goals Section (الأهداف)
+   ========================= */
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background-color: #7fbfc1;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  
+  /* Flexbox عشان التوسيط */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+
+  /* 🔥 التعديل هنا: عشان نرفعه لفوق شوية */
+  padding-bottom: 5px;  /* زقيناه لفوق */
+  line-height: 0;       /* لغينا ارتفاع السطر الزيادة */
+}
+@media (min-width: 900px) {
+  .par {
+    width: 200px;   /* كان 130px كبرناه لـ 180px */
+    height: 200px;  /* لازم الطول يبقى قد العرض عشان تفضل دايرة */
+  }
+
+  /* لو حسيتي إنهم لزقوا في بعض، زودي المسافة بينهم من هنا */
+  .Partners {
+    gap: 20px;      /* كانت 20px */
+  }
+}

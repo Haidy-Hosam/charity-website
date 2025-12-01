@@ -78,7 +78,7 @@ export default function MyStaticLeafletMap({
         الاجتماعية
       </p>
       {/* =============================================================================================================== */}
-
+<div className="mission-container">
       <div className="Mint_Triangle">
         <SectionLine text="الرسالة" color="#ffffff" />
 
@@ -92,7 +92,7 @@ export default function MyStaticLeafletMap({
           عبر الأجيال
         </p>
       </div>
-
+</div>
       {/* =============================================================================================================== */}
       <CenterTitle text="الاهداف" />
 
